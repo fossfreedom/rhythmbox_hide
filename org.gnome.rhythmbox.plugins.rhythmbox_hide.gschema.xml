@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+    <schema path="/org/gnome/rhythmbox/plugins/rhythmbox_hide/" id="org.gnome.rhythmbox.plugins.rhythmbox_hide">
+        <key type="b" name="hide">
+            <default>true</default>
+            <summary>Hide or minimized.</summary>
+            <description>True if hidden on startup or False if minimized.</description>
+        </key>
+    </schema>
+</schemalist>
