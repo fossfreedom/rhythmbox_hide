@@ -16,5 +16,17 @@ enabled rhythmbox to start either hidden or minimized
 <pre>
 git clone https://github.com/fossfreedom/rhythmbox_hide
 cd rhythmbox_hide
+<pre>
+
+for Rhythmbox versions 2.96 - 2.99.1
+
+<pre>
 ./install.sh
 </pre>
+
+for Rhythmbox versions 3.0 and above
+
+<pre>
+./install.sh --rb3
+</pre>
+

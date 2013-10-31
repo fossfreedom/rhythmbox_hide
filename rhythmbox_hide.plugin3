@@ -1,0 +1,11 @@
+[Plugin]
+Loader=python3
+Module=rhythmbox_hide
+IAge=2
+Depends=rb
+Name=Hide rhythmbox on start
+Description=Start rhythmbox hidden
+Authors=fossfreedom <foss.freedom@gmail.com>
+Copyright==© 2012 fossfreedom
+Website=http://github.com/fossfreedom/rhythmbox_hide
+Help=https://github.com/fossfreedom/rhythmbox_hide/blob/master/README.md
