@@ -7,8 +7,8 @@ cat <<EOF
 Usage:
 $0 [OPTION]
 -h, --help      show this message.
--2, --rb2     install the plugin for rhythmbox version 2.96 to 2.99 (default).
--3, --rb3       install the plugin for rhythmbox 3
+-2, --rb2     install the plugin for rhythmbox version 2.96 to 2.99.
+-3, --rb3       install the plugin for rhythmbox 3 (default)
 
 EOF
 )
@@ -30,10 +30,10 @@ eval set -- $TMP
 until [[ $1 == -- ]]; do
     case $1 in
         -2|--rb2)
-            RB=true
+            RB=false
             ;;
         -3|--rb3)
-            RB=false
+            RB=true
             ;;
         -h|--help)
             echo "$usage"
@@ -65,7 +65,7 @@ cp -r "${SCRIPT_PATH}"* "$PLUGIN_PATH"
 #install the plugin; the install path depends on the install mode
 if [[ $RB == false ]]
 then
-    mv "$PLUGIN_PATH"rhythmbox_hide.plugin3 "$PLUGIN_PATH"rhythmbox_hide.plugin
+    mv "$PLUGIN_PATH"rhythmbox_hide.plugin2 "$PLUGIN_PATH"rhythmbox_hide.plugin
 fi
 
 #remove the install script from the dir (not needed)

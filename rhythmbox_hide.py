@@ -26,6 +26,7 @@ from gi.repository import GdkPixbuf
 from gi.repository import Peas
 from gi.repository import Gio
 from gi.repository import PeasGtk
+from gi.repository import GLib
 
 import rb
 
@@ -53,12 +54,26 @@ class RhythmboxHidePlugin(GObject.Object, Peas.Activatable):
         '''
 
         self.shell = self.object
-        self.shell.props.db.connect('load-complete', self.load_complete)
+        #self.shell.props.window.connect_after('show', self.load_complete)
+        #self.shell.props.db.connect('load-complete', self.load_complete)
+        def delayed(*args):
+            if self.shell.props.visibility:
+                print ("Hi")
+                self.load_complete()
+                return False
+            else:
+                print ("no hi")
+                return True
+                
+        GLib.timeout_add(100, delayed)
+        #print (self.shell.props.selected_page)
 
     def load_complete(self, *args, **kwargs):
         '''
         Called by Rhythmbox when it has completed loading all data
         '''
+        print (self.shell.props.selected_page)
+        #return
         gs = GSetting()
         setting = gs.get_setting(gs.Path.PLUGIN)
         if setting[gs.PluginKey.HIDE]:
