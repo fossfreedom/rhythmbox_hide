@@ -21,12 +21,12 @@ cd rhythmbox_hide
 for Rhythmbox versions 2.96 - 2.99.1
 
 <pre>
-./install.sh
+./install.sh --rb2
 </pre>
 
 for Rhythmbox versions 3.0 and above
 
 <pre>
-./install.sh --rb3
+./install.sh
 </pre>
 
