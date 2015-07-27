@@ -64,16 +64,17 @@ class RhythmboxHidePlugin(GObject.Object, Peas.Activatable):
             else:
                 print ("no hi")
                 return True
-                
+        
+        # strictly speaking we should just connect to the notify event for the visibility
+        # gobject - but this seems to work more reliably if we poll instead
+        
         GLib.timeout_add(100, delayed)
-        #print (self.shell.props.selected_page)
-
+        
     def load_complete(self, *args, **kwargs):
         '''
         Called by Rhythmbox when it has completed loading all data
         '''
-        print (self.shell.props.selected_page)
-        #return
+
         gs = GSetting()
         setting = gs.get_setting(gs.Path.PLUGIN)
         if setting[gs.PluginKey.HIDE]:
